@@ -3,96 +3,114 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>K1 Engenharia — Projetos, Inspeções e Laudos</title>
-  <meta name="description" content="K1 Engenharia — Projetos mecânicos Ex/Exd, NR12, NR13, exaustão, climatização, laudos técnicos e manutenção industrial." />
-  <meta name="theme-color" content="#0b64d6">
+  <title>K1 Engenharia — Soluções Técnicas & Inspeções</title>
+  <meta name="description" content="K1 Engenharia - NR12, NR13, HVAC, inspeções, reclassificação e laudos técnicos." />
+  <meta name="theme-color" content="#0b0b0c">
 
-  <!-- Favicons gerados -->
+  <!-- Favicons (arquivos já gerados no ambiente) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/mnt/data/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/mnt/data/favicon-16.png">
 
   <style>
     :root{
-      --accent-green:#7cc21b;    /* tom verde da marca */
-      --bg-dark:#0b0b0c;         /* fundo principal */
-      --card:#0f1720;           /* cards */
-      --text-light:#e6eef6;
-      --muted-light:rgba(230,238,246,0.8);
-      --muted:#98a0ab;
+      --bg:#0b0b0c;
+      --card:#0f1720;
+      --text:#e6eef6;
+      --muted:rgba(230,238,246,0.78);
+      --accent-green:#7cc21b;
+      --accent-green-dark:#5ec00e;
       --maxW:1200px;
       --radius:12px;
-      font-family:Inter,system-ui,Arial,"Helvetica Neue",Roboto;
+      --gap:20px;
+      font-family:Inter,system-ui,Arial,"Segoe UI",Roboto,"Helvetica Neue";
     }
-
-    /* Reset simples */
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg-dark);color:var(--text-light);-webkit-font-smoothing:antialiased}
+    body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
     a{color:inherit}
+    .container{max-width:var(--maxW);margin:0 auto;padding:20px}
 
-    /* Layout */
-    .wrap{max-width:var(--maxW);margin:0 auto;padding:22px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:48px;width:auto;display:block}
-    .brand .name{font-weight:800;color:var(--text-light)}
+    .brand img{height:48px;width:auto;display:block;border-radius:6px}
+    .brand .name{font-weight:800;font-size:18px;color:var(--text)}
     nav.contact{font-size:14px;color:var(--muted)}
+    nav.contact a{color:var(--muted);text-decoration:none}
+    .wh-small{background:#25D366;padding:8px 10px;border-radius:8px;color:#051005;font-weight:700;text-decoration:none}
 
     /* HERO */
-    .hero{position:relative;padding:60px 18px 40px}
-    .hero .hero-bg{position:absolute;inset:0;background-image:url('/mnt/data/59913360-a3fb-4969-b953-4b25bf5f7b88.png');background-size:cover;background-position:center right;filter:brightness(0.35);z-index:0}
-    .hero .hero-inner{position:relative;z-index:2;max-width:var(--maxW);margin:0 auto;display:flex;align-items:center;gap:28px}
-    .hero-left{flex:1;color:var(--text-light);max-width:720px}
-    .hero-left h1{font-size:44px;line-height:1.02;margin:0 0 14px;font-weight:800}
-    .hero-left p{color:var(--muted-light);margin:0 0 20px}
-    .hero-actions{display:flex;gap:12px}
-    .btn{padding:12px 16px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-block}
+    .hero{position:relative;overflow:hidden;border-radius:12px; margin-bottom:28px}
+    .hero .bg{
+      position:absolute;inset:0;
+      background-image:url('/mnt/data/59913360-a3fb-4969-b953-4b25bf5f7b88.png');
+      background-size:cover;background-position:center right;filter:brightness(0.36);z-index:0;
+    }
+    .hero .inner{position:relative;z-index:2;max-width:var(--maxW);margin:0 auto;display:flex;align-items:center;gap:28px;padding:56px 20px}
+    .hero-left{flex:1;max-width:720px}
+    .hero-left h1{font-size:44px;line-height:1.02;margin:0 0 12px;font-weight:800}
+    .hero-left p.lead{color:var(--muted);margin:0 0 16px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:700}
     .btn-primary{background:var(--accent-green);color:#051005}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text-light)}
-    .hero-right{width:420px;flex:0 0 420px}
-    .hero-right img{width:100%;border-radius:8px;object-fit:cover;box-shadow:0 14px 40px rgba(0,0,0,0.6)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+    .hero-right{width:380px;flex:0 0 380px;display:flex;align-items:center;justify-content:center}
+    .hero-right img{width:100%;border-radius:10px;object-fit:cover;box-shadow:0 12px 34px rgba(0,0,0,0.6)}
 
-    /* Services section (premium) */
-    .services-section{padding:64px 18px}
-    .services-wrap{max-width:var(--maxW);margin:0 auto}
-    .services-title{font-size:40px;text-align:center;margin:0 0 12px;font-weight:800}
-    .services-intro{max-width:900px;margin:0 auto 34px;text-align:center;color:var(--muted);line-height:1.6}
+    /* Services (premium cards) */
+    .services { padding:36px 0 60px }
+    .services .title { text-align:center;font-size:36px;margin:0 0 10px;font-weight:800 }
+    .services .desc { text-align:center;color:var(--muted);max-width:980px;margin:0 auto 26px }
 
-    .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .service-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:26px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.6);color:var(--text-light);display:flex;flex-direction:column;gap:12px;min-height:420px}
-    .service-card .icon{width:56px;height:56px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--accent-green);font-size:22px}
-    .service-card h3{margin:6px 0 8px;color:var(--accent-green);font-size:18px}
-    .service-card p, .service-card li{color:var(--muted-light)}
-    .service-card ul{margin:8px 0 0;padding-left:18px}
-    .service-cta{margin-top:auto;display:inline-block;background:var(--accent-green);color:#051005;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+    .grid-2 { display:grid;grid-template-columns:repeat(2,1fr);gap:22px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      padding:24px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.6);
+      color:var(--text);display:flex;flex-direction:column;gap:12px;min-height:420px;
+    }
+    .card .head{display:flex;align-items:center;gap:12px}
+    .card .icon{width:56px;height:56px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:22px;color:var(--accent-green);background:transparent}
+    .card h3{margin:0;color:var(--accent-green);font-size:18px}
+    .card p, .card li{color:var(--muted);font-size:15px}
+    .card ul{margin:8px 0 0;padding-left:18px}
+    .card .cta{margin-top:auto}
+    .card .cta a{display:inline-block;background:var(--accent-green);color:#051005;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
 
-    .other-services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-    .other-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:10px;color:var(--text-light)}
+    /* other smaller row */
+    .other-row { margin-top:20px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+    .mini { background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); padding:16px;border-radius:10px;color:var(--text) }
 
-    /* Form card (right aside) */
-    .form-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    /* Contact/form layout */
+    .contact-section { padding:36px 0 80px }
+    .contact-wrap { display:grid; grid-template-columns:1fr 380px; gap:28px; align-items:start; }
+    .form-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); padding:18px;border-radius:12px }
     label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
-    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin-bottom:10px;background:transparent;color:var(--text-light)}
-    select option{background:var(--card);color:#111}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin-bottom:10px;background:transparent;color:var(--text)}
+    /* Force select/options text white across browsers */
+    select, select option {
+      background: rgba(255,255,255,0.02) !important;
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+    }
 
-    footer{max-width:var(--maxW);margin:36px auto;color:var(--muted);font-size:14px;padding:18px}
+    footer{border-top:1px solid rgba(255,255,255,0.04);padding:18px 0;margin-top:18px;color:var(--muted);font-size:14px}
 
     /* Responsive */
     @media (max-width:1000px){
-      .hero-inner{flex-direction:column-reverse;text-align:center}
+      .hero .inner{flex-direction:column-reverse;text-align:center}
       .hero-right{width:90%}
-      .cards-grid{grid-template-columns:1fr}
-      .other-services{grid-template-columns:repeat(2,1fr)}
+      .grid-2{grid-template-columns:1fr}
+      .other-row{grid-template-columns:repeat(2,1fr)}
+      .contact-wrap{grid-template-columns:1fr}
     }
     @media (max-width:520px){
       .hero-left h1{font-size:26px}
-      .other-services{grid-template-columns:1fr}
-      .brand img{height:40px}
+      .other-row{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-
-  <div class="wrap">
+  <div class="container">
     <!-- Header -->
     <header>
       <div class="brand">
@@ -104,103 +122,107 @@
 
       <nav class="contact">
         <div>Atendimento: Rio de Janeiro</div>
-        <div style="margin-top:6px"><a href="mailto:engenheirolmiguel@gmail.com" style="color:var(--muted)">engenheirolmiguel@gmail.com</a> • <a href="https://wa.me/5521999312865" style="color:var(--accent-green)" target="_blank">WhatsApp</a></div>
+        <div style="margin-top:6px">
+          <a href="mailto:engenheirolmiguel@gmail.com">engenheirolmiguel@gmail.com</a> •
+          <a href="https://wa.me/5521999312865" target="_blank" rel="noopener" style="color:var(--accent-green)">WhatsApp</a>
+        </div>
       </nav>
     </header>
 
     <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-inner">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="inner">
         <div class="hero-left">
           <h1>Soluções Inteligentes em Engenharia Mecânica</h1>
-          <p>Serviços especializados em NR-12, NR-13, inspeções técnicas, laudos e projetos de HVAC, exaustão e estruturas metálicas — segurança, conformidade e desempenho.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contato">Solicite uma avaliação técnica</a>
-            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          <p class="lead">A K1 Engenharia é especializada em serviços técnicos: desenvolvimento de projetos, laudos, inspeções técnicas e manutenções com foco em conformidade normativa, segurança operacional e eficiência.</p>
+          <p class="lead" style="margin-top:10px;color:var(--muted)">Faça sua cotação com a K1 — solicite uma avaliação técnica e fale conosco diretamente pelo WhatsApp.</p>
+          <div class="hero-actions" style="margin-top:14px">
+            <a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20cotacao%20com%20a%20K1%20Engenharia." target="_blank" rel="noopener">FAZER SUA COTAÇÃO (WhatsApp)</a>
+            <a class="btn btn-ghost" href="#servicos">VER SERVIÇOS</a>
           </div>
         </div>
 
-        <div class="hero-right">
-          <img src="/mnt/data/59913360-a3fb-4969-b953-4b25bf5f7b88.png" alt="Engenheiro K1" />
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES (premium) -->
-    <section class="services-section" id="servicos">
-      <div class="services-wrap">
-        <h2 class="services-title">Nossos Serviços Técnicos Especializados</h2>
-        <p class="services-intro">Oferecemos soluções completas para garantir a saúde e a segurança no ambiente de trabalho, com serviços especializados que atendem às exigências legais e promovem um ambiente seguro para seus colaboradores.</p>
-
-        <div class="cards-grid">
-          <!-- NR12 -->
-          <article class="service-card" id="nr12">
-            <div style="display:flex;align-items:center;gap:12px">
-              <div class="icon">🛠️</div>
-              <h3>NR 12 – Segurança no Trabalho em Máquinas e Equipamentos</h3>
-            </div>
-            <p>A NR 12 é a norma que estabelece os requisitos de segurança no trabalho com máquinas e equipamentos, garantindo a proteção da integridade física e da vida dos trabalhadores.</p>
-            <p>Nossa equipe oferece serviços completos de conformidade com a NR 12, incluindo:</p>
-            <ul>
-              <li>Avaliação de riscos em máquinas e equipamentos;</li>
-              <li>Implementação de proteções e dispositivos de segurança;</li>
-              <li>Treinamento de operadores e manutenção;</li>
-              <li>Laudos, inspeções e documentação técnica.</li>
-            </ul>
-            <a class="service-cta" href="#nr12">SAIBA MAIS</a>
-          </article>
-
-          <!-- NR13 -->
-          <article class="service-card" id="nr13">
-            <div style="display:flex;align-items:center;gap:12px">
-              <div class="icon">⚙️</div>
-              <h3>NR 13 – Caldeiras, Vasos de Pressão e Tubulações</h3>
-            </div>
-            <p>A NR 13 regulamenta a segurança na operação de caldeiras, vasos de pressão e tubulações, prevenindo acidentes graves como explosões, vazamentos e queimaduras.</p>
-            <p>Oferecemos serviços completos de conformidade com a NR 13, incluindo:</p>
-            <ul>
-              <li>Inspeções periódicas de caldeiras, vasos de pressão e tubulações;</li>
-              <li>Laudos técnicos e relatórios de avaliação;</li>
-              <li>Treinamento de operadores e equipe de manutenção;</li>
-              <li>Implementação de procedimentos de segurança e monitoramento.</li>
-            </ul>
-            <a class="service-cta" href="#nr13">SAIBA MAIS</a>
-          </article>
-        </div>
-
-        <div class="other-services" aria-label="Outros serviços">
-          <div class="other-card">
-            <strong>Inspeção Técnica de Elevadores e Pontes Rolantes</strong>
-            <p style="color:var(--muted);margin-top:8px">Comissionamento e inspeções técnicas, laudos e perícias para garantir conformidade e segurança.</p>
-          </div>
-
-          <div class="other-card">
-            <strong>Sistemas HVAC (Climatização e Exaustão)</strong>
-            <p style="color:var(--muted);margin-top:8px">Laudos técnicos, PMOC e projetos de ventilação, exaustão e climatização para indústria e comércio.</p>
-          </div>
-
-          <div class="other-card">
-            <strong>Reclassificação de Monta</strong>
-            <p style="color:var(--muted);margin-top:8px">Análise técnica para definir categoria de risco e atualização de documentação conforme normas.</p>
-          </div>
+        <div class="hero-right" aria-hidden="true">
+          <img src="/mnt/data/59913360-a3fb-4969-b953-4b25bf5f7b88.png" alt="Engenheiro K1">
         </div>
       </div>
     </section>
 
-    <!-- CONTACT / FORM section -->
-    <section style="padding:40px 18px;">
-      <div style="max-width:var(--maxW);margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start">
+    <!-- Services -->
+    <section class="services" id="servicos" aria-label="Serviços">
+      <h2 class="title services-title">Nossos Serviços Técnicos Especializados</h2>
+      <p class="desc services-desc">Oferecemos soluções completas para garantir a saúde e a segurança no ambiente de trabalho, com serviços que atendem às exigências legais e promovem um ambiente seguro para seus colaboradores.</p>
+
+      <div class="grid-2">
+        <!-- Card 1: Elevadores -->
+        <article class="card" id="card-elevadores">
+          <div class="head">
+            <div class="icon">🛟</div>
+            <h3>Inspeção Técnica de Elevadores e Pontes Rolantes</h3>
+          </div>
+          <p>Garantir a segurança, confiabilidade e conformidade dos elevadores é essencial. Nossos engenheiros realizam inspeções detalhadas e emitem laudos técnicos com recomendações técnicas claras.</p>
+          <p>Nossos serviços incluem:</p>
+          <ul>
+            <li>Comissionamento e inspeções técnicas (NR12, ABNT e exigências locais);</li>
+            <li>Laudos técnicos formais para auditorias e controle interno;</li>
+            <li>Perícias, testes operacionais e relatórios de conformidade;</li>
+            <li>Recomendações de manutenção e ajustes de segurança.</li>
+          </ul>
+          <div class="cta"><a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Inspe%C3%A7%C3%A3o%20de%20Elevadores%20e%20Pontes%20Rolantes." target="_blank" rel="noopener">SAIBA MAIS</a></div>
+        </article>
+
+        <!-- Card 2: HVAC -->
+        <article class="card" id="card-hvac">
+          <div class="head">
+            <div class="icon">❄️</div>
+            <h3>Sistemas HVAC (Aquecimento, Ventilação e Ar Condicionado)</h3>
+          </div>
+          <p>Projetamos, avaliamos e emitimos laudos para sistemas HVAC, garantindo controle térmico, renovação do ar e exaustão conforme normas técnicas e de higiene.</p>
+          <p>Serviços:</p>
+          <ul>
+            <li>Laudos técnicos e avaliações de desempenho;</li>
+            <li>PMOC: planos de manutenção, operação e controle;</li>
+            <li>Dimensionamento de dutos, seleção de equipamentos e comissionamento;</li>
+            <li>Perícias técnicas para identificar falhas ou contaminações.</li>
+          </ul>
+          <div class="cta"><a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Sistemas%20HVAC." target="_blank" rel="noopener">SAIBA MAIS</a></div>
+        </article>
+      </div>
+
+      <!-- second row -->
+      <div class="other-row" style="margin-top:26px">
+        <!-- Card 3: Elevadores complemento -->
+        <div class="mini">
+          <strong>Inspeção Técnica de Elevadores e Pontes Rolantes (Complementar)</strong>
+          <p style="color:var(--muted);margin-top:8px">Serviços complementares: verificação estrutural, plano de ação para correções, relatórios para seguradoras e suporte técnico para adequações.</p>
+          <div style="margin-top:12px"><a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20inspecao%20de%20elevadores." target="_blank" rel="noopener">SAIBA MAIS</a></div>
+        </div>
+
+        <!-- Card 4: Reclassificação -->
+        <div class="mini">
+          <strong>Reclassificação de Monta</strong>
+          <p style="color:var(--muted);margin-top:8px">Análise técnica para definir ou atualizar a categoria de risco de máquinas e equipamentos. Inclui análise estrutural, verificação de proteções e emissão de laudo.</p>
+          <div style="margin-top:12px"><a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Reclassificacao%20de%20Monta." target="_blank" rel="noopener">SAIBA MAIS</a></div>
+        </div>
+
+        <!-- empty placeholder to keep grid balanced (or add another service) -->
+        <div></div>
+      </div>
+    </section>
+
+    <!-- Contact / Form -->
+    <section class="contact-section" aria-label="Contato">
+      <div class="contact-wrap">
         <div>
-          <h2 style="margin-top:0;color:var(--text-light)">Fale conosco</h2>
-          <p style="color:var(--muted);max-width:760px">Agende uma visita, solicite proposta ou peça avaliação técnica. Atuamos no Rio de Janeiro e regiões próximas.</p>
-
-          <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
-            <a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento">Falar no WhatsApp</a>
+          <h2 style="margin-top:0">Fale conosco</h2>
+          <p style="color:var(--muted)">Agende visita técnica, solicite proposta ou peça avaliação. Atuamos no Rio de Janeiro e região.</p>
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20avaliacao%20tecnica">Falar no WhatsApp</a>
             <a class="btn btn-ghost" href="mailto:engenheirolmiguel@gmail.com">Enviar e-mail</a>
           </div>
 
-          <div style="margin-top:18px;color:var(--muted);font-size:14px">
+          <div style="margin-top:14px;color:var(--muted);font-size:14px">
             <p><strong>Email:</strong> engenheirolmiguel@gmail.com</p>
             <p><strong>WhatsApp:</strong> +55 21 9 9931-2865</p>
             <p><strong>Atendimento:</strong> Rio de Janeiro e região</p>
@@ -209,9 +231,9 @@
 
         <aside class="form-card">
           <h3 style="margin-top:0">Peça sua proposta</h3>
-          <p class="small" style="margin-top:0;color:var(--muted)">Preencha e nós retornamos em até 48 horas.</p>
+          <p style="color:var(--muted);margin-top:0">Preencha e nós retornamos em até 48 horas.</p>
 
-          <form action="#" method="POST">
+          <form id="leadForm" action="#" method="POST">
             <label for="nome">Nome</label>
             <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
             <label for="empresa">Empresa</label>
@@ -230,11 +252,11 @@
             </select>
             <label for="mensagem">Mensagem</label>
             <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o serviço ou deixe telefone para contato"></textarea>
-            <button type="submit" class="btn btn-primary" style="width:100%;">Receber proposta</button>
+            <button id="submitBtn" type="submit" class="btn btn-primary" style="width:100%;">Receber proposta</button>
           </form>
 
-          <a class="wh" href="https://wa.me/5521999312865?text=Ol%C3%A1%20K1%20Engenharia%2C%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;background:#25d366;color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700">Falar no WhatsApp</a>
-          <p class="small" style="margin-top:8px;color:var(--muted)">Privacidade: seus dados não serão compartilhados.</p>
+          <a class="wh-small" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px">Falar no WhatsApp</a>
+          <p style="color:var(--muted);margin-top:8px;font-size:13px">Privacidade: seus dados não serão compartilhados.</p>
         </aside>
       </div>
     </section>
@@ -245,10 +267,41 @@
   </div>
 
   <script>
-    // Pequeno ajuste para selects em tema escuro
+    // Smooth scroll for internal anchors
     (function(){
-      const selects = document.querySelectorAll('select');
-      selects.forEach(s=>{ s.style.backgroundColor='transparent'; s.style.color='var(--text-light)'; s.style.border='1px solid rgba(255,255,255,0.04)'; });
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click', function(e){
+          var href = a.getAttribute('href');
+          if(href.length>1){
+            e.preventDefault();
+            var el = document.querySelector(href);
+            if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        });
+      });
+    })();
+
+    // Simple form handler: opens WhatsApp prefilled with form content (fallback)
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var nome = encodeURIComponent(document.getElementById('nome').value || '');
+      var empresa = encodeURIComponent(document.getElementById('empresa').value || '');
+      var email = encodeURIComponent(document.getElementById('email').value || '');
+      var servico = encodeURIComponent(document.getElementById('servico').value || '');
+      var mensagem = encodeURIComponent(document.getElementById('mensagem').value || '');
+      var text = 'Nome:'+nome+'%0A'+'Empresa:'+empresa+'%0A'+'Email:'+email+'%0A'+'Servico:'+servico+'%0A'+'Mensagem:'+mensagem;
+      var url = 'https://wa.me/5521999312865?text=' + text;
+      window.open(url, '_blank');
+    });
+
+    // Ensure selects show white text on Safari/Chrome (in case)
+    (function(){
+      var selects = document.querySelectorAll('select');
+      selects.forEach(function(s){
+        s.style.background = 'rgba(255,255,255,0.02)';
+        s.style.color = '#ffffff';
+        s.style.webkitTextFillColor = '#ffffff';
+      });
     })();
   </script>
 </body>
