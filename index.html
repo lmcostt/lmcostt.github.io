@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>K1 Engenharia — Projetos, Inspeções e Laudos</title>
+  <meta name="description" content="K1 Engenharia — Projetos mecânicos Ex/Exd, NR12, NR13, exaustão, climatização, laudos técnicos e manutenção industrial." />
+  <meta name="theme-color" content="#0b64d6">
+  <style>
+    :root{
+      --accent:#0b64d6;
+      --accent-2:#0a54b2;
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#0b1724;
+      --muted:#64748b;
+      --radius:12px;
+      --maxw:1100px;
+      --gap:20px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,-apple-system,"Segoe UI",Roboto,"Helvetica Neue";background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:800;font-size:18px;color:var(--accent)}
+    nav .contact{font-size:14px;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:28px 0}
+    h1{font-size:30px;margin:0 0 10px;line-height:1.12}
+    .lead{color:var(--muted);margin:0 0 18px;font-size:16px}
+    .cta{background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
+    .secondary{background:#fff;border:1px solid #e6eef6;padding:10px 12px;border-radius:10px;margin-left:12px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(11,22,36,0.05)}
+    .features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .feature{flex:1;min-width:160px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);text-align:left}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .service{background:#fff;padding:18px;border-radius:10px;border:1px solid #eef3fb}
+    .service strong{display:block;margin-bottom:8px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .testimonials{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .testimonial{flex:1;min-width:220px;background:#fff;padding:14px;border-radius:10px;border:1px solid #eef3fb}
+    footer{margin-top:36px;color:var(--muted);font-size:14px;padding:18px 0;border-top:1px solid #e6eef6}
+    form label{display:block;font-size:13px;margin-bottom:6px;color:#334155}
+    input,textarea,select{width:100%;padding:10px;border:1px solid #e6eef6;border-radius:8px;margin-bottom:10px;font-size:14px}
+    .wh{display:inline-block;margin-top:10px;background:#25d366;color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700}
+    .small{font-size:13px;color:var(--muted)}
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .card{max-width:520px;margin:0 auto}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .two-col{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      h1{font-size:22px}
+      .services{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/logo.png" alt="K1 Engenharia" style="height:44px;border-radius:6px;object-fit:contain" onerror="this.style.display='none'">
+        <div class="brand">K1 Engenharia</div>
+      </div>
+      <nav class="contact small">
+        <div style="text-align:right;">
+          <div class="small">Atendimento: Rio de Janeiro</div>
+          <div style="margin-top:6px"><a class="small" href="mailto:contato@k1engenharia.com">contato@k1engenharia.com</a> • <a href="https://wa.me/SEU_WHATSAPP" class="small">WhatsApp</a></div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Hero">
+      <div>
+        <h1>Soluções completas em engenharia mecânica e segurança industrial</h1>
+        <p class="lead">Projetos Ex/Exd, inspeções NR12/NR13, sistemas de exaustão e climatização, laudos técnicos e serviços de manutenção — entregues com conformidade normativa e rapidez.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a class="cta" href="#contato">Solicitar orçamento</a>
+          <a class="secondary" href="#servicos">Ver serviços</a>
+        </div>
+
+        <div class="features" aria-hidden="true">
+          <div class="feature"><strong>Conformidade normativa</strong><div class="small">Projetos e laudos conforme NR e normas técnicas</div></div>
+          <div class="feature"><strong>Prazo enxuto</strong><div class="small">Propostas e visitas em 48–72h</div></div>
+          <div class="feature"><strong>Equipe qualificada</strong><div class="small">Engenheiros e técnicos certificados</div></div>
+        </div>
+      </div>
+
+      <aside class="card" aria-labelledby="form-title">
+        <h3 id="form-title" style="margin:0 0 8px">Peça sua proposta</h3>
+        <p class="small" style="margin-top:0">Preencha e nós retornamos em até 48 horas.</p>
+
+        <!-- Se usar Formspree/Netlify/endpoint troque action -->
+        <form action="#" method="POST">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+          <label for="empresa">Empresa</label>
+          <input id="empresa" name="empresa" type="text" placeholder="Nome da empresa">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
+          <label for="servico">Serviço de interesse</label>
+          <select id="servico" name="servico">
+            <option>Projetos Mecânicos Ex / Exd</option>
+            <option>Inspeção NR12</option>
+            <option>Inspeção NR13 / Laudos</option>
+            <option>Exaustão e Ventilação</option>
+            <option>Climatização (HVAC)</option>
+            <option>Estruturas Metálicas</option>
+            <option>Manutenção / Execução</option>
+          </select>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o serviço ou deixe telefone para contato"></textarea>
+          <button type="submit" class="cta" style="width:100%;">Receber proposta</button>
+        </form>
+
+        <a class="wh" href="https://wa.me/SEU_WHATSAPP?text=Olá%20K1%20Engenharia,%20gostaria%20de%20um%20orçamento">Falar no WhatsApp</a>
+        <p class="small" style="margin-top:8px">Privacidade: seus dados não serão compartilhados.</p>
+      </aside>
+    </section>
+
+    <!-- Services -->
+    <section id="servicos" style="margin-top:18px">
+      <h2>Serviços oferecidos</h2>
+      <div class="services" aria-label="Serviços">
+        <div class="service">
+          <strong>Projetos Mecânicos Ex / Exd</strong>
+          <div class="small">Projetos completos para áreas classificadas (proteção contra explosão), certificação e documentação técnica.</div>
+        </div>
+
+        <div class="service">
+          <strong>Inspeção e Adequação NR12</strong>
+          <div class="small">Laudos, análise de risco, medidas corretivas e elaboração de planos de adequação de máquinas e equipamentos.</div>
+        </div>
+
+        <div class="service">
+          <strong>Inspeção NR13 e Laudos</strong>
+          <div class="small">Inspeção de vasos e tubulações, emissão de laudos técnicos e relatórios conforme legislação.</div>
+        </div>
+
+        <div class="service">
+          <strong>Exaustão Industrial e Ventilação</strong>
+          <div class="small">Cálculo de vazões, projetos de dutos, exaustores, sistemas de remoção de contaminantes.</div>
+        </div>
+
+        <div class="service">
+          <strong>Climatização (HVAC)</strong>
+          <div class="small">Projetos de condicionamento de ar para áreas industriais e comerciais, dimensionamento e especificação.</div>
+        </div>
+
+        <div class="service">
+          <strong>Projetos em Estruturas Metálicas</strong>
+          <div class="small">Detalhamento, listas de materiais e desenhos executivos para fabricação e montagem.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How we work -->
+    <section style="margin-top:22px">
+      <h2>Como trabalhamos</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3 style="margin-top:0">1. Diagnóstico</h3>
+          <p class="small">Visita técnica e levantamento das necessidades para definição do escopo.</p>
+          <h3>2. Projeto e Documentação</h3>
+          <p class="small">Entrega de projeto executivo, esquemas e relatórios técnicos.</p>
+          <h3>3. Execução e Suporte</h3>
+          <p class="small">Apoio na execução, supervisão técnica e emissão de laudos finais.</p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Por que escolher a K1 Engenharia?</h3>
+          <ul class="small">
+            <li>Equipe experiente em ambientes industriais e áreas classificadas.</li>
+            <li>Projetos com foco em segurança e conformidade.</li>
+            <li>Resposta rápida para orçamentos e visitas.</li>
+          </ul>
+          <div style="margin-top:12px">
+            <a class="cta" href="#contato">Solicitar visita técnica</a>
+            <a class="secondary" href="mailto:contato@k1engenharia.com" style="margin-left:10px">contato@k1engenharia.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="margin-top:22px">
+      <h2>Depoimentos</h2>
+      <div class="testimonials">
+        <div class="testimonial card">“Profissionalismo e entrega no prazo. Recomendamos.” — Cliente A</div>
+        <div class="testimonial card">“Projeto conforme norma e equipe técnica atenciosa.” — Cliente B</div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contato" style="margin-top:22px">
+      <h2>Contato</h2>
+      <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <div style="flex:1;min-width:240px">
+          <p class="small"><strong>Email:</strong> <a href="mailto:contato@k1engenharia.com">contato@k1engenharia.com</a></p>
+          <p class="small"><strong>WhatsApp:</strong> <a href="https://wa.me/SEU_WHATSAPP">(21) 9 XXXX-XXXX</a></p>
+          <p class="small"><strong>Atendimento:</strong> Rio de Janeiro e região</p>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <img src="assets/team.jpg" alt="Equipe K1 Engenharia" style="width:100%;border-radius:8px;object-fit:cover;max-height:180px" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      K1 Engenharia • contato@k1engenharia.com • (21) 9XXXX-XXXX • RJ
+    </footer>
+  </div>
+</body>
+</html>
