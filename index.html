@@ -6,247 +6,236 @@
   <title>K1 Engenharia — Projetos, Inspeções e Laudos</title>
   <meta name="description" content="K1 Engenharia — Projetos mecânicos Ex/Exd, NR12, NR13, exaustão, climatização, laudos técnicos e manutenção industrial." />
   <meta name="theme-color" content="#0b64d6">
+
+  <!-- Favicons gerados -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/mnt/data/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/mnt/data/favicon-16.png">
+
   <style>
     :root{
-      --accent:#0b64d6;
-      --accent-2:#0a54b2;
-      --bg:#0b0b0c; /* ajustado para fundo escuro conforme pedido */
-      --card:#0f1720;
-      --text:#e6eef6;
+      --accent-green:#7cc21b;    /* tom verde da marca */
+      --bg-dark:#0b0b0c;         /* fundo principal */
+      --card:#0f1720;           /* cards */
+      --text-light:#e6eef6;
+      --muted-light:rgba(230,238,246,0.8);
       --muted:#98a0ab;
-      --accent-green:#5ec00e; /* verde para títulos */
+      --maxW:1200px;
       --radius:12px;
-      --maxw:1100px;
-      --gap:20px;
+      font-family:Inter,system-ui,Arial,"Helvetica Neue",Roboto;
     }
+
+    /* Reset simples */
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Arial,-apple-system,"Segoe UI",Roboto,"Helvetica Neue";background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    body{margin:0;background:var(--bg-dark);color:var(--text-light);-webkit-font-smoothing:antialiased}
     a{color:inherit}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{font-weight:800;font-size:18px;color:var(--text)}
-    nav .contact{font-size:14px;color:var(--muted)}
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:28px 0}
-    h1{font-size:30px;margin:0 0 10px;line-height:1.12}
-    .lead{color:var(--muted);margin:0 0 18px;font-size:16px}
-    .cta{background:var(--accent-green);color:#051005;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
-    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:10px;margin-left:12px;color:var(--text)}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
-    .features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .feature{flex:1;min-width:160px;padding:12px;border-radius:10px;background:transparent;text-align:left}
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-    .service{background:transparent;padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
-    .service strong{display:block;margin-bottom:8px;color:var(--text)}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .testimonials{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .testimonial{flex:1;min-width:220px;background:transparent;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
-    footer{margin-top:36px;color:var(--muted);font-size:14px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.04)}
-    form label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
-    input,textarea,select{width:100%;padding:10px;border:1px solid rgba(255,255,255,0.04);border-radius:8px;margin-bottom:10px;font-size:14px;background:transparent;color:var(--text)}
-    .wh{display:inline-block;margin-top:10px;background:#25d366;color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700}
-    .small{font-size:13px;color:var(--muted)}
-    h2.service-title{color:var(--accent-green);}
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr; text-align:center}
-      .card{max-width:520px;margin:0 auto}
-      .services{grid-template-columns:repeat(2,1fr)}
-      .two-col{grid-template-columns:1fr}
+
+    /* Layout */
+    .wrap{max-width:var(--maxW);margin:0 auto;padding:22px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:48px;width:auto;display:block}
+    .brand .name{font-weight:800;color:var(--text-light)}
+    nav.contact{font-size:14px;color:var(--muted)}
+
+    /* HERO */
+    .hero{position:relative;padding:60px 18px 40px}
+    .hero .hero-bg{position:absolute;inset:0;background-image:url('/mnt/data/59913360-a3fb-4969-b953-4b25bf5f7b88.png');background-size:cover;background-position:center right;filter:brightness(0.35);z-index:0}
+    .hero .hero-inner{position:relative;z-index:2;max-width:var(--maxW);margin:0 auto;display:flex;align-items:center;gap:28px}
+    .hero-left{flex:1;color:var(--text-light);max-width:720px}
+    .hero-left h1{font-size:44px;line-height:1.02;margin:0 0 14px;font-weight:800}
+    .hero-left p{color:var(--muted-light);margin:0 0 20px}
+    .hero-actions{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-block}
+    .btn-primary{background:var(--accent-green);color:#051005}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text-light)}
+    .hero-right{width:420px;flex:0 0 420px}
+    .hero-right img{width:100%;border-radius:8px;object-fit:cover;box-shadow:0 14px 40px rgba(0,0,0,0.6)}
+
+    /* Services section (premium) */
+    .services-section{padding:64px 18px}
+    .services-wrap{max-width:var(--maxW);margin:0 auto}
+    .services-title{font-size:40px;text-align:center;margin:0 0 12px;font-weight:800}
+    .services-intro{max-width:900px;margin:0 auto 34px;text-align:center;color:var(--muted);line-height:1.6}
+
+    .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .service-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:26px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.6);color:var(--text-light);display:flex;flex-direction:column;gap:12px;min-height:420px}
+    .service-card .icon{width:56px;height:56px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--accent-green);font-size:22px}
+    .service-card h3{margin:6px 0 8px;color:var(--accent-green);font-size:18px}
+    .service-card p, .service-card li{color:var(--muted-light)}
+    .service-card ul{margin:8px 0 0;padding-left:18px}
+    .service-cta{margin-top:auto;display:inline-block;background:var(--accent-green);color:#051005;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+
+    .other-services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .other-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:10px;color:var(--text-light)}
+
+    /* Form card (right aside) */
+    .form-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin-bottom:10px;background:transparent;color:var(--text-light)}
+    select option{background:var(--card);color:#111}
+
+    footer{max-width:var(--maxW);margin:36px auto;color:var(--muted);font-size:14px;padding:18px}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero-inner{flex-direction:column-reverse;text-align:center}
+      .hero-right{width:90%}
+      .cards-grid{grid-template-columns:1fr}
+      .other-services{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width:520px){
-      h1{font-size:22px}
-      .services{grid-template-columns:1fr}
+      .hero-left h1{font-size:26px}
+      .other-services{grid-template-columns:1fr}
+      .brand img{height:40px}
     }
   </style>
 </head>
 <body>
+
   <div class="wrap">
-    <!-- Header atualizado: logo inteira no topo (fundo escuro) -->
+    <!-- Header -->
     <header>
-      <div style="display:flex;align-items:center;gap:12px">
+      <div class="brand">
         <a href="/">
-          <!-- usando o arquivo que você enviou localmente; quando subir ao repo, mude para images/logo-white.png -->
-          <img src="/mnt/data/ChatGPT Image 18 de nov. de 2025, 12_37_56.png" alt="K1 Engenharia" style="height:52px;border-radius:6px;object-fit:contain">
+          <img src="/mnt/data/ChatGPT Image 18 de nov. de 2025, 12_37_56.png" alt="K1 Engenharia logo">
         </a>
-        <div class="brand">K1 Engenharia</div>
+        <div class="name">K1 Engenharia</div>
       </div>
 
-      <nav class="contact small" style="text-align:right;">
-        <div class="small">Atendimento: Rio de Janeiro</div>
-        <div style="margin-top:6px">
-          <a class="small" href="mailto:engenheirolmiguel@gmail.com" style="color:inherit;text-decoration:none">engenheirolmiguel@gmail.com</a>
-          •
-          <a href="https://wa.me/5521999312865" target="_blank" rel="noopener" style="color:var(--accent-green);text-decoration:none;font-weight:700">WhatsApp: +55 21 9 9931-2865</a>
-        </div>
+      <nav class="contact">
+        <div>Atendimento: Rio de Janeiro</div>
+        <div style="margin-top:6px"><a href="mailto:engenheirolmiguel@gmail.com" style="color:var(--muted)">engenheirolmiguel@gmail.com</a> • <a href="https://wa.me/5521999312865" style="color:var(--accent-green)" target="_blank">WhatsApp</a></div>
       </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <div>
-        <h1>Soluções completas em engenharia mecânica e segurança industrial</h1>
-        <p class="lead">Projetos Ex/Exd, inspeções NR12/NR13, sistemas de exaustão e climatização, laudos técnicos e serviços de manutenção — entregues com conformidade normativa e rapidez.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:12px">
-          <a class="cta" href="#contato">Solicitar orçamento</a>
-          <a class="secondary" href="#servicos">Ver serviços</a>
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Soluções Inteligentes em Engenharia Mecânica</h1>
+          <p>Serviços especializados em NR-12, NR-13, inspeções técnicas, laudos e projetos de HVAC, exaustão e estruturas metálicas — segurança, conformidade e desempenho.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Solicite uma avaliação técnica</a>
+            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+          </div>
         </div>
 
-        <div class="features" aria-hidden="true">
-          <div class="feature"><strong>Conformidade normativa</strong><div class="small">Projetos e laudos conforme NR e normas técnicas</div></div>
-          <div class="feature"><strong>Prazo enxuto</strong><div class="small">Propostas e visitas em 48–72h</div></div>
-          <div class="feature"><strong>Equipe qualificada</strong><div class="small">Engenheiros e técnicos certificados</div></div>
+        <div class="hero-right">
+          <img src="/mnt/data/59913360-a3fb-4969-b953-4b25bf5f7b88.png" alt="Engenheiro K1" />
         </div>
-      </div>
-
-      <aside class="card" aria-labelledby="form-title">
-        <h3 id="form-title" style="margin:0 0 8px">Peça sua proposta</h3>
-        <p class="small" style="margin-top:0">Preencha e nós retornamos em até 48 horas.</p>
-
-        <!-- Se usar Formspree/Netlify/endpoint troque action -->
-        <form action="#" method="POST">
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
-          <label for="empresa">Empresa</label>
-          <input id="empresa" name="empresa" type="text" placeholder="Nome da empresa">
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required value="engenheirolmiguel@gmail.com">
-          <label for="servico">Serviço de interesse</label>
-          <select id="servico" name="servico">
-            <option>Projetos Mecânicos Ex / Exd</option>
-            <option>Inspeção NR12</option>
-            <option>Inspeção NR13 / Laudos</option>
-            <option>Exaustão e Ventilação</option>
-            <option>Climatização (HVAC)</option>
-            <option>Estruturas Metálicas</option>
-            <option>Manutenção / Execução</option>
-          </select>
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o serviço ou deixe telefone para contato"></textarea>
-          <button type="submit" class="cta" style="width:100%;">Receber proposta</button>
-        </form>
-
-        <a class="wh" href="https://wa.me/5521999312865?text=Ol%C3%A1%20K1%20Engenharia%2C%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener">Falar no WhatsApp</a>
-        <p class="small" style="margin-top:8px">Privacidade: seus dados não serão compartilhados.</p>
-      </aside>
-    </section>
-
-    <!-- Services -->
-    <section id="servicos" style="margin-top:18px">
-      <h2>Serviços oferecidos</h2>
-      <div class="services" aria-label="Serviços">
-        <article class="service" id="nr12">
-          <h3 class="service-title">NR 12 – Segurança no Trabalho em Máquinas e Equipamentos</h3>
-          <p>A NR 12 é a norma que estabelece os requisitos de segurança no trabalho com máquinas e equipamentos, garantindo a proteção da integridade física e da vida dos trabalhadores. Seu objetivo é prevenir acidentes, amputações e outros riscos graves, tornando o ambiente industrial mais seguro e eficiente.</p>
-          <p>Nossa equipe oferece serviços completos de conformidade com a NR 12, incluindo:</p>
-          <ul>
-            <li>Avaliação de riscos em máquinas e equipamentos;</li>
-            <li>Implementação de proteções e dispositivos de segurança;</li>
-            <li>Treinamento de operadores e manutenção;</li>
-            <li>Laudos, inspeções e documentação técnica.</li>
-          </ul>
-          <p>Conte conosco para tornar sua operação mais segura e eficiente!</p>
-        </article>
-
-        <article class="service" id="nr13">
-          <h3 class="service-title">NR 13 – Caldeiras, Vasos de Pressão e Tubulações</h3>
-          <p>A NR 13 é a norma que regulamenta a segurança na operação de caldeiras, vasos de pressão e tubulações, prevenindo acidentes graves como explosões, vazamentos e queimaduras. Seu objetivo é garantir a integridade de equipamentos e a proteção dos trabalhadores, alinhando sua empresa às exigências legais.</p>
-          <p>Oferecemos serviços completos de conformidade com a NR 13, incluindo:</p>
-          <ul>
-            <li>Inspeções periódicas de caldeiras, vasos de pressão e tubulações;</li>
-            <li>Laudos técnicos e relatórios de avaliação;</li>
-            <li>Treinamento de operadores e equipe de manutenção;</li>
-            <li>Implementação de procedimentos de segurança e monitoramento.</li>
-          </ul>
-          <p>Conte conosco para manter seus equipamentos seguros e sua operação em conformidade!</p>
-        </article>
-
-        <article class="service" id="elevadores">
-          <h3 class="service-title">Inspeção Técnica de Elevadores e Pontes Rolantes</h3>
-          <p>Garantir a segurança, confiabilidade e conformidade dos elevadores é essencial para proteger colaboradores, clientes e usuários. Nossos engenheiros mecânicos especializados oferecem serviços completos, incluindo:</p>
-          <ul>
-            <li>Comissionamento e inspeções técnicas;</li>
-            <li>Laudos técnicos;</li>
-            <li>Perícias e avaliações de conformidade.</li>
-          </ul>
-          <p>Atuamos em edifícios residenciais, comerciais e industriais, garantindo operação segura e confiável.</p>
-        </article>
-
-        <article class="service" id="hvac">
-          <h3 class="service-title">Sistemas HVAC (Aquecimento, Ventilação e Ar Condicionado)</h3>
-          <p>O HVAC é o sistema responsável pelo controle térmico, ventilação, exaustão e qualidade do ar em ambientes industriais, comerciais, residenciais e alimentícios. A exaustão remove gases, vapores, poeiras e contaminantes, garantindo segurança, higiene e conforto.</p>
-          <p>Oferecemos serviços especializados em HVAC e sistemas de exaustão, incluindo:</p>
-          <ul>
-            <li>Laudos técnicos;</li>
-            <li>PMOCs (Plano de Manutenção, Operação e Controle);</li>
-            <li>Perícias técnicas e inspeções para auditorias.</li>
-          </ul>
-        </article>
-
-        <article class="service" id="reclassificacao">
-          <h3 class="service-title">Reclassificação de Monta</h3>
-          <p>Sou Engenheiro Mecânico habilitado (CREA) para realizar a Reclassificação de Monta. Esse procedimento técnico avalia máquinas e equipamentos para definir ou atualizar sua categoria de risco conforme NR12, NR13, ABNT e requisitos de segurança industrial.</p>
-          <p>A reclassificação envolve análise estrutural, condições de operação, proteções, esforços e modos de falha. É essencial para garantir enquadramento correto para inspeções, manutenção, adequações e emissão de laudos técnicos.</p>
-          <p><strong>Por que fazer:</strong></p>
-          <ul>
-            <li>Adequação às normas (evita multas);</li>
-            <li>Garantia de segurança operacional;</li>
-            <li>Identificação de falhas e riscos;</li>
-            <li>Atualização após reformas ou mudanças de uso;</li>
-            <li>Base técnica para decisões de reparo ou substituição;</li>
-            <li>Comprovação perante auditorias e seguradoras.</li>
-          </ul>
-        </article>
-
       </div>
     </section>
 
-    <!-- How we work -->
-    <section style="margin-top:22px">
-      <h2>Como trabalhamos</h2>
-      <div class="two-col">
-        <div class="card">
-          <h3 style="margin-top:0">1. Diagnóstico</h3>
-          <p class="small">Visita técnica e levantamento das necessidades para definição do escopo.</p>
-          <h3>2. Projeto e Documentação</h3>
-          <p class="small">Entrega de projeto executivo, esquemas e relatórios técnicos.</p>
-          <h3>3. Execução e Suporte</h3>
-          <p class="small">Apoio na execução, supervisão técnica e emissão de laudos finais.</p>
+    <!-- SERVICES (premium) -->
+    <section class="services-section" id="servicos">
+      <div class="services-wrap">
+        <h2 class="services-title">Nossos Serviços Técnicos Especializados</h2>
+        <p class="services-intro">Oferecemos soluções completas para garantir a saúde e a segurança no ambiente de trabalho, com serviços especializados que atendem às exigências legais e promovem um ambiente seguro para seus colaboradores.</p>
+
+        <div class="cards-grid">
+          <!-- NR12 -->
+          <article class="service-card" id="nr12">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="icon">🛠️</div>
+              <h3>NR 12 – Segurança no Trabalho em Máquinas e Equipamentos</h3>
+            </div>
+            <p>A NR 12 é a norma que estabelece os requisitos de segurança no trabalho com máquinas e equipamentos, garantindo a proteção da integridade física e da vida dos trabalhadores.</p>
+            <p>Nossa equipe oferece serviços completos de conformidade com a NR 12, incluindo:</p>
+            <ul>
+              <li>Avaliação de riscos em máquinas e equipamentos;</li>
+              <li>Implementação de proteções e dispositivos de segurança;</li>
+              <li>Treinamento de operadores e manutenção;</li>
+              <li>Laudos, inspeções e documentação técnica.</li>
+            </ul>
+            <a class="service-cta" href="#nr12">SAIBA MAIS</a>
+          </article>
+
+          <!-- NR13 -->
+          <article class="service-card" id="nr13">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="icon">⚙️</div>
+              <h3>NR 13 – Caldeiras, Vasos de Pressão e Tubulações</h3>
+            </div>
+            <p>A NR 13 regulamenta a segurança na operação de caldeiras, vasos de pressão e tubulações, prevenindo acidentes graves como explosões, vazamentos e queimaduras.</p>
+            <p>Oferecemos serviços completos de conformidade com a NR 13, incluindo:</p>
+            <ul>
+              <li>Inspeções periódicas de caldeiras, vasos de pressão e tubulações;</li>
+              <li>Laudos técnicos e relatórios de avaliação;</li>
+              <li>Treinamento de operadores e equipe de manutenção;</li>
+              <li>Implementação de procedimentos de segurança e monitoramento.</li>
+            </ul>
+            <a class="service-cta" href="#nr13">SAIBA MAIS</a>
+          </article>
         </div>
 
-        <div class="card">
-          <h3 style="margin-top:0">Por que escolher a K1 Engenharia?</h3>
-          <ul class="small">
-            <li>Equipe experiente em ambientes industriais e áreas classificadas.</li>
-            <li>Projetos com foco em segurança e conformidade.</li>
-            <li>Resposta rápida para orçamentos e visitas.</li>
-          </ul>
-          <div style="margin-top:12px">
-            <a class="cta" href="#contato">Solicitar visita técnica</a>
-            <a class="secondary" href="mailto:engenheirolmiguel@gmail.com" style="margin-left:10px">engenheirolmiguel@gmail.com</a>
+        <div class="other-services" aria-label="Outros serviços">
+          <div class="other-card">
+            <strong>Inspeção Técnica de Elevadores e Pontes Rolantes</strong>
+            <p style="color:var(--muted);margin-top:8px">Comissionamento e inspeções técnicas, laudos e perícias para garantir conformidade e segurança.</p>
+          </div>
+
+          <div class="other-card">
+            <strong>Sistemas HVAC (Climatização e Exaustão)</strong>
+            <p style="color:var(--muted);margin-top:8px">Laudos técnicos, PMOC e projetos de ventilação, exaustão e climatização para indústria e comércio.</p>
+          </div>
+
+          <div class="other-card">
+            <strong>Reclassificação de Monta</strong>
+            <p style="color:var(--muted);margin-top:8px">Análise técnica para definir categoria de risco e atualização de documentação conforme normas.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section style="margin-top:22px">
-      <h2>Depoimentos</h2>
-      <div class="testimonials">
-        <div class="testimonial card">“Profissionalismo e entrega no prazo. Recomendamos.” — Cliente A</div>
-        <div class="testimonial card">“Projeto conforme norma e equipe técnica atenciosa.” — Cliente B</div>
-      </div>
-    </section>
+    <!-- CONTACT / FORM section -->
+    <section style="padding:40px 18px;">
+      <div style="max-width:var(--maxW);margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start">
+        <div>
+          <h2 style="margin-top:0;color:var(--text-light)">Fale conosco</h2>
+          <p style="color:var(--muted);max-width:760px">Agende uma visita, solicite proposta ou peça avaliação técnica. Atuamos no Rio de Janeiro e regiões próximas.</p>
 
-    <!-- Contact -->
-    <section id="contato" style="margin-top:22px">
-      <h2>Contato</h2>
-      <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
-        <div style="flex:1;min-width:240px">
-          <p class="small"><strong>Email:</strong> <a href="mailto:engenheirolmiguel@gmail.com">engenheirolmiguel@gmail.com</a></p>
-          <p class="small"><strong>WhatsApp:</strong> <a href="https://wa.me/5521999312865" target="_blank" rel="noopener">+55 21 9 9931-2865</a></p>
-          <p class="small"><strong>Atendimento:</strong> Rio de Janeiro e região</p>
+          <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento">Falar no WhatsApp</a>
+            <a class="btn btn-ghost" href="mailto:engenheirolmiguel@gmail.com">Enviar e-mail</a>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted);font-size:14px">
+            <p><strong>Email:</strong> engenheirolmiguel@gmail.com</p>
+            <p><strong>WhatsApp:</strong> +55 21 9 9931-2865</p>
+            <p><strong>Atendimento:</strong> Rio de Janeiro e região</p>
+          </div>
         </div>
-        <div style="flex:1;min-width:220px">
-          <img src="/mnt/data/k1 Engenharia.png" alt="Equipe K1 Engenharia" style="width:100%;border-radius:8px;object-fit:cover;max-height:180px" onerror="this.style.display='none'">
-        </div>
+
+        <aside class="form-card">
+          <h3 style="margin-top:0">Peça sua proposta</h3>
+          <p class="small" style="margin-top:0;color:var(--muted)">Preencha e nós retornamos em até 48 horas.</p>
+
+          <form action="#" method="POST">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" placeholder="Nome da empresa">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required value="engenheirolmiguel@gmail.com">
+            <label for="servico">Serviço de interesse</label>
+            <select id="servico" name="servico">
+              <option>Projetos Mecânicos Ex / Exd</option>
+              <option>Inspeção NR12</option>
+              <option>Inspeção NR13 / Laudos</option>
+              <option>Exaustão e Ventilação</option>
+              <option>Climatização (HVAC)</option>
+              <option>Estruturas Metálicas</option>
+              <option>Manutenção / Execução</option>
+            </select>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o serviço ou deixe telefone para contato"></textarea>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Receber proposta</button>
+          </form>
+
+          <a class="wh" href="https://wa.me/5521999312865?text=Ol%C3%A1%20K1%20Engenharia%2C%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;background:#25d366;color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700">Falar no WhatsApp</a>
+          <p class="small" style="margin-top:8px;color:var(--muted)">Privacidade: seus dados não serão compartilhados.</p>
+        </aside>
       </div>
     </section>
 
@@ -254,5 +243,13 @@
       K1 Engenharia • engenheirolmiguel@gmail.com • +55 21 9 9931-2865 • RJ
     </footer>
   </div>
+
+  <script>
+    // Pequeno ajuste para selects em tema escuro
+    (function(){
+      const selects = document.querySelectorAll('select');
+      selects.forEach(s=>{ s.style.backgroundColor='transparent'; s.style.color='var(--text-light)'; s.style.border='1px solid rgba(255,255,255,0.04)'; });
+    })();
+  </script>
 </body>
 </html>
