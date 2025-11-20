@@ -7,7 +7,7 @@
   <meta name="description" content="K1 Engenharia - NR12, NR13, HVAC, exaustão, inspeções, reclassificação e projetos mecânicos." />
   <meta name="theme-color" content="#0b0b0c">
 
-  <!-- favicons — coloque os arquivos em /images -->
+  <!-- favicons (coloque em images/) -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
 
@@ -51,7 +51,6 @@
       background-image:
         repeating-linear-gradient(0deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 40px),
         linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65));
-      mix-blend-mode: overlay;
       pointer-events:none;
     }
     .hero .inner{position:relative;z-index:2;max-width:var(--maxW);margin:0 auto;display:flex;gap:28px;align-items:center;padding:48px 20px}
@@ -68,18 +67,21 @@
     .hero-right img{width:100%;border-radius:10px;object-fit:cover;box-shadow:0 12px 34px rgba(0,0,0,0.6)}
 
 
-    /* SERVICES area */
+    /* SERVICES area (UNIFIED CARD STYLE) */
     .services{padding:36px 0 60px}
     .services .head{max-width:1000px;margin:0 auto 12px;text-align:center}
     .services .title{font-size:34px;margin:0 0 6px;font-weight:800;color:var(--text)}
     .services .subtitle{color:var(--muted);margin:0 0 20px}
 
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    /* unified responsive grid: auto-fit keeps cards equal and responsive */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border:1px solid rgba(255,255,255,0.04);
       padding:22px;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,0.6);
-      display:flex;flex-direction:column;gap:12px;color:var(--text);min-height:460px;
+      display:flex;flex-direction:column;gap:12px;color:var(--text);
+      min-height:420px; /* same height for all cards */
     }
     .card .head{display:flex;align-items:center;gap:12px}
     .svg-ico{width:56px;height:56px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--tech-green);font-size:22px}
@@ -91,11 +93,7 @@
     .cta-row{margin-top:auto}
     .cta-row a{display:inline-block;background:var(--tech-green);color:#051005;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:800}
 
-    /* second row mini cards */
-    .mini-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-    .mini{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:10px;color:var(--text)}
-
-    /* CONTACT / FORM */
+    /* Contact and form */
     .contact{padding:36px 0 80px}
     .contact-wrap{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;max-width:var(--maxW);margin:0 auto}
     .form-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:18px;border-radius:12px}
@@ -105,17 +103,14 @@
 
     footer{padding:18px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.04);margin-top:16px}
 
-    /* Responsive */
+    /* responsive tweaks */
     @media (max-width:1000px){
       .hero .inner{flex-direction:column-reverse;text-align:center}
       .hero-right{width:90%}
-      .grid-2{grid-template-columns:1fr}
-      .mini-row{grid-template-columns:repeat(2,1fr)}
       .contact-wrap{grid-template-columns:1fr}
     }
     @media (max-width:520px){
       .hero-left h1{font-size:26px}
-      .mini-row{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -168,21 +163,20 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES (all cards equal) -->
     <section class="services" id="services-area" aria-label="Serviços">
       <div class="head">
         <h2 class="title">Nossos Serviços Técnicos Especializados</h2>
         <p class="subtitle">Soluções completas para garantir a segurança, conformidade e eficiência operacional da sua planta.</p>
       </div>
 
-      <!-- GRID principal: dois grandes cards -->
-      <div class="grid-2">
+      <!-- Unified responsive grid -->
+      <div class="services-grid">
         <!-- NR12 -->
         <article class="card" id="nr12">
           <div class="head">
-            <!-- excavator-like svg -->
             <div class="svg-ico" aria-hidden="true" title="NR12">
-              <!-- simple excavator icon (SVG) -->
+              <!-- excavator icon -->
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12h6v6H2zM8 12h8v6H8zM19 6h-4l-2 2h6v2h2V8a2 2 0 0 0-2-2z" fill="currentColor"/></svg>
             </div>
             <h3>NR 12 – Segurança no Trabalho em Máquinas e Equipamentos</h3>
@@ -243,66 +237,169 @@
             <a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20NR13%20-%20Caldeiras%20e%20Vasos%20de%20Pressao" target="_blank" rel="noopener">SAIBA MAIS</a>
           </div>
         </article>
-      </div>
 
-      <!-- second row: three mini + one mini -->
-      <div class="mini-row" style="margin-top:22px">
         <!-- Elevadores -->
-        <div class="mini" id="elevadores">
-          <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--tech-green)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 3h16v18H4z" fill="currentColor"/></svg></div>
-            <strong>Inspeção Técnica de Elevadores e Pontes Rolantes</strong>
+        <article class="card" id="elevadores">
+          <div class="head">
+            <div class="svg-ico" aria-hidden="true" title="Elevadores">
+              <!-- gear icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v8l6 6V2z" fill="currentColor"/></svg>
+            </div>
+            <h3>Inspeção Técnica de Elevadores e Pontes Rolantes</h3>
           </div>
-          <p style="color:var(--muted);margin-top:8px">Inspeções estruturais, mecânicas e funcionais; verificação de cabos, trilhos, freios e emissão de laudos com ART.</p>
-          <div style="margin-top:10px"><a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20Inspecao%20de%20Elevadores" target="_blank">SAIBA MAIS</a></div>
-        </div>
+
+          <p>Elevadores industriais, talhas e pontes rolantes são equipamentos críticos para movimentação de cargas. Uma falha pode gerar acidentes graves, paradas operacionais e prejuízos significativos. Por isso, inspeções técnicas periódicas realizadas por engenheiro habilitado são obrigatórias.</p>
+
+          <p>Prestamos serviços completos de:</p>
+          <ul>
+            <li>Inspeções estruturais, mecânicas e funcionais de pontes rolantes, talhas e monovias;</li>
+            <li>Avaliação de cabos de aço, trilhos, rodas, freios, ganchos e motoredutores;</li>
+            <li>Verificação de alinhamento, desgaste e integridade estrutural;</li>
+            <li>Laudos técnicos com ART e recomendações de manutenção corretiva e preventiva;</li>
+            <li>Análise de capacidade de carga e reavaliação técnica conforme uso real.</li>
+          </ul>
+
+          <div class="deliver">
+            <span class="item">Laudo técnico com ART</span>
+            <span class="item">Testes operacionais</span>
+            <span class="item">Relatório detalhado</span>
+          </div>
+
+          <div class="cta-row">
+            <a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20um%20orcamento%20para%20Inspecao%20de%20Elevadores" target="_blank" rel="noopener">SAIBA MAIS</a>
+          </div>
+        </article>
 
         <!-- HVAC -->
-        <div class="mini" id="hvac">
-          <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--tech-green)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v8l6 6V2z" fill="currentColor"/></svg></div>
-            <strong>Sistemas HVAC (Aquecimento, Ventilação e Ar Condicionado)</strong>
+        <article class="card" id="hvac">
+          <div class="head">
+            <div class="svg-ico" aria-hidden="true" title="HVAC">
+              <!-- snowflake / hvac -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v8l6 6V2z" fill="currentColor"/></svg>
+            </div>
+            <h3>Sistemas HVAC (Aquecimento, Ventilação e Ar Condicionado)</h3>
           </div>
-          <p style="color:var(--muted);margin-top:8px">Projetos de climatização, cálculo de carga térmica, PMOC e laudos de desempenho.</p>
-          <div style="margin-top:10px"><a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Sistemas%20HVAC" target="_blank">SAIBA MAIS</a></div>
-        </div>
+
+          <p>Os sistemas HVAC são essenciais para garantir conforto térmico, renovação do ar e controle ambiental em indústrias, comércios e edificações em geral. Um projeto adequado reduz consumo energético, melhora a qualidade do ar e aumenta a produtividade.</p>
+
+          <p>Nossos serviços incluem:</p>
+          <ul>
+            <li>Projetos de climatização (split, VRF, chiller, rooftop);</li>
+            <li>Cálculo de carga térmica, renovação de ar e pressurização;</li>
+            <li>Projetos de ventilação mecânica e dutos para ambientes críticos;</li>
+            <li>Adequações conforme normas técnicas (ASHRAE, PMOC, NBR 16401);</li>
+            <li>PMOC – Plano de Manutenção, Operação e Controle;</li>
+            <li>Laudos, inspeções e certificações de sistemas HVAC.</li>
+          </ul>
+
+          <div class="deliver">
+            <span class="item">PMOC</span>
+            <span class="item">Laudo PDF</span>
+            <span class="item">Cálculo de carga</span>
+          </div>
+
+          <div class="cta-row">
+            <a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Sistemas%20HVAC" target="_blank" rel="noopener">SAIBA MAIS</a>
+          </div>
+        </article>
 
         <!-- Exaustão -->
-        <div class="mini" id="exautso">
-          <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--tech-green)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18v2H3z" fill="currentColor"/></svg></div>
-            <strong>Sistema de Exaustão Industrial</strong>
+        <article class="card" id="exaus">
+          <div class="head">
+            <div class="svg-ico" aria-hidden="true" title="Exaustão">
+              <!-- exhaust icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12h18v2H3z" fill="currentColor"/></svg>
+            </div>
+            <h3>Sistema de Exaustão Industrial</h3>
           </div>
-          <p style="color:var(--muted);margin-top:8px">Projetos de exaustão, cálculo de vazões, especificação de exaustores e laudos técnicos conforme NBRs.</p>
-          <div style="margin-top:10px"><a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Sistema%20de%20Exaustao" target="_blank">SAIBA MAIS</a></div>
-        </div>
-      </div>
 
-      <!-- third mini row -->
-      <div class="mini-row" style="margin-top:18px">
-        <!-- Reclassificação -->
-        <div class="mini" id="reclass">
-          <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--tech-green)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" fill="currentColor"/></svg></div>
-            <strong>Reclassificação de Monta</strong>
+          <p>Os sistemas de exaustão são fundamentais para controlar partículas, fumos, vapores, gordura, gases e contaminantes gerados nos processos industriais. Um projeto correto evita riscos à saúde, atende normas ambientais e reduz custos de manutenção.</p>
+
+          <p>Atuamos em:</p>
+          <ul>
+            <li>Projetos completos de exaustão industrial e ventilação local exaustora (VLE);</li>
+            <li>Exaustão para cozinhas profissionais e áreas de calor;</li>
+            <li>Cálculo de vazão, velocidade de captura, dutos e perda de carga;</li>
+            <li>Instalação e especificação de exaustores axiais e centrífugos;</li>
+            <li>Projetos conforme NBRs, PMOC e regulamentos ambientais.</li>
+          </ul>
+
+          <div class="deliver">
+            <span class="item">Cálculo de vazão</span>
+            <span class="item">Especificação de equipamentos</span>
+            <span class="item">Laudo técnico</span>
           </div>
-          <p style="color:var(--muted);margin-top:8px">Análise estrutural para redefinir capacidade de carga de vigas e pontos de ancoragem; emissão de laudo técnico e ART.</p>
-          <div style="margin-top:10px"><a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Reclassificacao%20de%20Monta" target="_blank">SAIBA MAIS</a></div>
-        </div>
+
+          <div class="cta-row">
+            <a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Sistema%20de%20Exaustao" target="_blank" rel="noopener">SAIBA MAIS</a>
+          </div>
+        </article>
+
+        <!-- Reclassificação -->
+        <article class="card" id="reclass">
+          <div class="head">
+            <div class="svg-ico" aria-hidden="true" title="Reclassificação">
+              <!-- structural icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" fill="currentColor"/></svg>
+            </div>
+            <h3>Reclassificação de Monta</h3>
+          </div>
+
+          <p>A reclassificação de monta é o processo técnico de avaliar e redefinir a capacidade de carga de vigas, estruturas e pontos de ancoragem utilizados para içamento, sustentação ou movimentação de equipamentos e cargas.</p>
+
+          <p>Como engenheiro mecânico habilitado, realizo:</p>
+          <ul>
+            <li>Análise estrutural detalhada da viga ou ponto de ancoragem;</li>
+            <li>Verificação de materiais, dimensões, soldas e integridade;</li>
+            <li>Cálculo mecânico para confirmar a capacidade de carga real;</li>
+            <li>Definição de nova classificação e emissão de laudo com ART;</li>
+            <li>Recomendações de reforço ou substituição.</li>
+          </ul>
+
+          <div class="deliver">
+            <span class="item">Laudo com ART</span>
+            <span class="item">Cálculo estrutural</span>
+            <span class="item">Relatório técnico</span>
+          </div>
+
+          <div class="cta-row">
+            <a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Reclassificacao%20de%20Monta" target="_blank" rel="noopener">SAIBA MAIS</a>
+          </div>
+        </article>
 
         <!-- Projetos Mecânicos & Prototipagem -->
-        <div class="mini" id="projetos">
-          <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--tech-green)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 21h18v-2H3v2zM7 3h10v2H7zM5 7h14v2H5z" fill="currentColor"/></svg></div>
-            <strong>Projetos Mecânicos e Prototipagem Rápida (FDM)</strong>
+        <article class="card" id="projetos">
+          <div class="head">
+            <div class="svg-ico" aria-hidden="true" title="Projetos">
+              <!-- design icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 21h18v-2H3v2zM7 3h10v2H7zM5 7h14v2H5z" fill="currentColor"/></svg>
+            </div>
+            <h3>Projetos Mecânicos e Prototipagem Rápida (FDM)</h3>
           </div>
-          <p style="color:var(--muted);margin-top:8px">Modelagem CAD, prototipagem FDM (PLA, PETG, ABS, TPU), otimização para impressão e documentação técnica (STL, STEP).</p>
-          <div style="margin-top:10px"><a class="btn btn-primary" href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Projetos%20Mecanicos%20e%20Prototipagem" target="_blank">SAIBA MAIS</a></div>
-        </div>
 
-        <!-- placeholder empty to balance grid -->
-        <div></div>
-      </div>
+          <p>Desenvolvemos soluções completas de engenharia mecânica — da concepção ao protótipo funcional — com foco em prototipagem rápida por FDM (Fused Deposition Modeling).</p>
+
+          <p>Serviços incluídos:</p>
+          <ul>
+            <li>Levantamento de requisitos e especificação técnica;</li>
+            <li>Modelagem CAD 3D e desenhos 2D executáveis;</li>
+            <li>Prototipagem FDM (PLA, PETG, ABS, TPU) e testes funcionais;</li>
+            <li>Otimização geométrica para impressão e documentação técnica;</li>
+            <li>Emissão de relatórios de validação e preparação para produção.</li>
+          </ul>
+
+          <div class="deliver">
+            <span class="item">STL / STEP</span>
+            <span class="item">Protótipo FDM</span>
+            <span class="item">Relatório</span>
+          </div>
+
+          <div class="cta-row">
+            <a href="https://wa.me/5521999312865?text=Ol%C3%A1%2C%20gostaria%20de%20informacoes%20sobre%20Projetos%20Mecanicos%20e%20Prototipagem" target="_blank" rel="noopener">SAIBA MAIS</a>
+          </div>
+        </article>
+
+      </div> <!-- end services-grid -->
     </section>
 
     <!-- CONTACT -->
